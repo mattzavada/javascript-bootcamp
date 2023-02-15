@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("utilities.js");var o=function(o){return(o=o.toUpperCase())+"!"};console.log("hello"),console.log("index.js"),console.log(3),console.log(o("Bob")),console.log(o("Matt")),console.log(10*10)})();

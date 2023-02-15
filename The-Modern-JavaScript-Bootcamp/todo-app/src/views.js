@@ -8,13 +8,15 @@ import { removeTodo, toggleTodo } from "./todos";
 // Render application todos based on filters
 const renderTodos = () => {
   let todos = getTodos();
-  let filters = getFilters();
+
+  //Destructor returned object
+  let { searchText, hideCompleted } = getFilters();
 
   const filteredTodos = todos.filter((todo) => {
     const searchTextMatch = todo.text
       .toLowerCase()
-      .includes(filters.searchText.toLowerCase());
-    const hideCompletedMatch = !filters.hideCompleted || !todo.completed;
+      .includes(searchText.toLowerCase());
+    const hideCompletedMatch = !hideCompleted || !todo.completed;
 
     return searchTextMatch && hideCompletedMatch;
   });

@@ -16,13 +16,13 @@ const getFilters = () => {
 // setFilters
 // Arguments: updates object with optional searchText or hideCompleted
 // Return value: none
-const setFilters = (filter) => {
-  if (typeof filter.searchText === "string") {
-    filters.searchText = filter.searchText;
+const setFilters = ({ searchText, hideCompleted }) => {
+  if (typeof searchText === "string") {
+    filters.searchText = searchText;
   }
 
-  if (typeof filter.hideCompleted === "boolean") {
-    filters.hideCompleted = filter.hideCompleted;
+  if (typeof hideCompleted === "boolean") {
+    filters.hideCompleted = hideCompleted;
   }
 
   renderTodos();
